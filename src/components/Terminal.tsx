@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, KeyboardEvent } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Terminal as TerminalIcon } from 'lucide-react';
 
@@ -63,7 +63,7 @@ export default function Terminal({ isOpen, onClose }: TerminalProps) {
     setHistory(prev => [...prev, { type: 'output', text: output }]);
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
+  const handleKeyDown = (e: KeyboardEvent) => {
     if (e.key === 'Enter') {
       handleCommand(input);
       setInput('');
