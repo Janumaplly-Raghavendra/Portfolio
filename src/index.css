@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-orbitron: "Orbitron", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  
+  --color-neon-blue: #00f3ff;
+  --color-neon-purple: #bc13fe;
+  --color-neon-pink: #ff007f;
+  --color-dark-bg: #050505;
+  --color-glass: rgba(255, 255, 255, 0.05);
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+}
+
+@layer base {
+  body {
+    @apply bg-dark-bg text-white font-poppins overflow-x-hidden;
+    cursor: none; /* For custom cursor */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-orbitron tracking-wider;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-glass backdrop-blur-md border border-glass-border rounded-xl shadow-[0_4px_30px_rgba(0,0,0,0.1)];
+  }
+  
+  .neon-text-blue {
+    text-shadow: 0 0 5px #00f3ff, 0 0 10px #00f3ff, 0 0 20px #00f3ff;
+  }
+  
+  .neon-text-purple {
+    text-shadow: 0 0 5px #bc13fe, 0 0 10px #bc13fe, 0 0 20px #bc13fe;
+  }
+  
+  .neon-text-pink {
+    text-shadow: 0 0 5px #ff007f, 0 0 10px #ff007f, 0 0 20px #ff007f;
+  }
+
+  .neon-border-blue {
+    box-shadow: 0 0 5px #00f3ff, inset 0 0 5px #00f3ff;
+    border-color: #00f3ff;
+  }
+
+  .neon-border-purple {
+    box-shadow: 0 0 5px #bc13fe, inset 0 0 5px #bc13fe;
+    border-color: #bc13fe;
+  }
+  
+  .neon-border-pink {
+    box-shadow: 0 0 5px #ff007f, inset 0 0 5px #ff007f;
+    border-color: #ff007f;
+  }
+  
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #050505;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #bc13fe;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00f3ff;
+  }
+}
